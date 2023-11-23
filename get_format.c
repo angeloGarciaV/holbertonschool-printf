@@ -1,8 +1,8 @@
-#include "_print.h"
+#include "main.h"
 #include <stddef.h>
 #include <string.h>
 /**
-  * get_op_func - function that selects the correct function to perform
+  * get_format_func - function that selects the correct function to perform
   * @q: format specifier
   * Return: which format to use
   */
@@ -18,13 +18,13 @@ int (*get_format_func(char *q))(int, int)
 	};
 
 	i = 0;
-	while (ops[i].op != NULL)
+	while (frmt[i].frmt != NULL)
 	{
-		if (strcmp(q, ops[i].op) == 0)
+		if (strcmp(q, frmt[i].frmt) == 0)
 		{
 			break;
 		}
 		i++;
 	}
-	return (ops[i].f);
+	return (frmt[i].f);
 }
