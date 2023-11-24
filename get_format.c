@@ -17,11 +17,11 @@ int (*get_format_func(char *q))(int, int)
 		{NULL, NULL}
 	};
 
-	 for (i = 0; frmt[i].frmt != NULL; i++)
-    {
-        if (strcmp(q, frmt[i].frmt) == 0)
-        {
-            return frmt[i].f;
-        }
-    }
+	for (i = 0; frmt[i].frmt != NULL; i++)
+	{
+		if (strcmp(q, frmt[i].frmt) == 0)
+		{
+			return (frmt[i].f);
+		}
+	}
 }

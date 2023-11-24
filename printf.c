@@ -9,36 +9,37 @@
   */
 int _printf(const char *format, ...)
 {
-        int i;
-        int length = 0;
+	int i;
+	int length = 0;
 
-        va_list args;
-        va_start(args, format);
+	va_list args;
 
-        for (i = 0; format[i] != '\0'; i++)
-        {
-                if (format[i] == '%')
-                {
-                        i++;
-                        if (format[i] == '\0')
-                        {
-                                return (-1);
-                        }
-                        else if (format[i] == '%')
-                        {
-                                putchar('%');
-                                length++;
-                        }
-                        else
-                        {
-                                length += get_format_func(format[i])(args, length);
-                        }
-                }
-                else
-                {
-                        putchar(format[i]);
-                        length++;
-                }
-        }
-        va_end(args);
+	va_start(args, format);
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == '\0')
+			{
+				return (-1);
+			}
+			else if (format[i] == '%')
+			{
+				putchar('%');
+				length++;
+			}
+			else
+			{
+				length += get_format_func(format[i])(args, length);
+			}
+		}
+		else
+		{
+			putchar(format[i]);
+			length++;
+		}
+	}
+	va_end(args);
 }

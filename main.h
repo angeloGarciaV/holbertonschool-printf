@@ -1,6 +1,12 @@
 #ifndef _PRINT_
 #define _PRINT_
+#include <stdarg.h>
 
+/**
+  * struct spec - specifier
+  * @frmt: format specifier
+  * @f: format specific function
+  */
 typedef struct spec
 {
 	char *frmt;
