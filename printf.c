@@ -10,14 +10,35 @@
 int _printf(const char *format, ...)
 {
         int i;
+        int length = 0;
+
         va_list args;
         va_start(args, format);
 
-	if (format == 'c')
-	{
-		x = va_args(args, char);
-		putchar(x);
-
-	}
+        for (i = 0; format[i] != '\0'; i++)
+        {
+                if (format[i] == '%')
+                {
+                        i++;
+                        if (format[i] == '\0')
+                        {
+                                return (-1);
+                        }
+                        else if (format[i] == '%')
+                        {
+                                putchar('%');
+                                length++;
+                        }
+                        else
+                        {
+                                length += get_format_func(format[i])(args, length);
+                        }
+                }
+                else
+                {
+                        putchar(format[i]);
+                        length++;
+                }
+        }
         va_end(args);
 }
