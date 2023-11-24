@@ -7,5 +7,5 @@ typedef struct spec
 	int (*f)(int a, int b);
 } spec_t;
 
-int_printf(const char *format, ...);
+int _printf(const char *format, ...);
 #endif
