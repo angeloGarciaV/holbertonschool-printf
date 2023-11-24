@@ -1,0 +1,35 @@
+.TH _PRINTF 1 printf\-1.0
+.SH NAME
+_printf \- print arguments input by the user. As well as the amount of characters not including the null terminator.
+.SH SYNOPSIS
+.B _printf
+.RB [ \-c
+.IR character ]
+.RB [ \-s
+.IR string ]
+.RB [ \-i
+.IR integer]
+.RB [ \-u
+.IR unsigned integer]
+.P
+.BR _printf "..."
+.SH DESCRIPTION
+.B _printf
+is a custom version of the printf function found in the standard library
+.SH OPTIONS
+.TP
+.B \-c
+prints single charcter
+.TP
+.B \-s
+prints a string
+.TP 
+.B \-i
+prints integers
+.TP
+.B \-u
+prints unsigned integers
+.SH AUTHORS
+.B Armando Luis Marrero & Angelo Garcia
+.SH COPYRIGHT
+.B printf foundation, we deal in printfs
