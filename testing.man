@@ -1,18 +1,11 @@
-.TH _PRINTF 1 printf\-1.0
+.TH _PRINTF 1 2023-11-25 GNU
+
 .SH NAME
-_printf \- print arguments input by the user. As well as the amount of characters not including the null terminator.
+.B _printf \- custom format and print data
 .SH SYNOPSIS
 .B _printf
-.RB [ \-c
-.IR character ]
-.RB [ \-s
-.IR string ]
-.RB [ \-i
-.IR integer]
-.RB [ \-u
-.IR unsigned integer]
-.P
-.BR _printf "..."
+\fIFORMAT\fR
+
 .SH DESCRIPTION
 .B _printf
 is a custom version of the printf function found in the standard library
